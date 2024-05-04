@@ -1,4 +1,3 @@
-cordova.define("cordova-plugin-rtac.RTAC", function(require, exports, module) {
 var exec = require('cordova/exec');
 var RTAC={
     openNavigation:function (fnSuccess, fnError,  latitude, longitude){
@@ -12,4 +11,3 @@ var RTAC={
     }
 }
 module.exports = RTAC;
-});
