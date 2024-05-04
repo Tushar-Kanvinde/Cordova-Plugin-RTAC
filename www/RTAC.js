@@ -8,6 +8,12 @@ var RTAC={
     },
     printOTPLImage:function(fnSuccess, fnError,imageString){
         exec(fnSuccess, fnError, "RTAC", "printBitmap",[imageString]);
+    },
+    enableScreenshot:function(fnSuccess, fnError,imageString){
+        exec(fnSuccess, fnError, "RTAC", "enableScreenshot");
+    },
+    disableScreenshot:function(fnSuccess, fnError,imageString){
+        exec(fnSuccess, fnError, "RTAC", "disableScreenshot");
     }
 }
 module.exports = RTAC;
