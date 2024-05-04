@@ -32,7 +32,7 @@
             <param name="android-package" value="in.rtac.otpl.otpl"/>
          </feature>
       </config-file>
-      <framework src="androidx.appcompat:appcompat:1.6.1" />     
+      <framework src="androidx.appcompat:appcompat" />     
       <source-file src="src/android/RTAC.java" target-dir="src/in/rtac/RTAC" />
       <source-file src="src/android/otpl.java" target-dir="src/in/rtac/otpl" />
       <source-file src="libs/classes-2.1.13.jar" target-dir="libs"/>
