@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-rtac"
+        version="0.1.0-dev">
+
+   <name>RTAC</name>
+   <description>A cordova plugin for utilities for RTAC for android platform.</description>
+
+   <repo>https://github.com/Tushar-Kanvinde/Cordova-Plugin-RTAC.git</repo>
+   <license>Apache 2.0</license>
+   <keywords>Cordova, RTAC Utilities</keywords>
+
+   <author>Tushar Kanvinde</author>
+
+   <!-- cordova -->
+   <engines>
+      <engine name="cordova" version=">=11.0.0" />
+   </engines>
+
+   <js-module src="www/RTAC.js" name="RTAC">
+      <clobbers target="RTAC" />
+   </js-module>
+
+   <!-- android -->
+   <platform name="android">
+      <config-file target="res/xml/config.xml" parent="/*">
+         <feature name="RTAC">
+            <param name="android-package" value="in.rtac.RTAC.RTAC"/>
+         </feature>
+         <feature name="otpl">
+            <param name="android-package" value="in.rtac.otpl.otpl"/>
+         </feature>
+      </config-file>
+      <framework src="androidx.appcompat:appcompat:1.6.1" />     
+      <source-file src="src/android/RTAC.java" target-dir="src/in/rtac/RTAC" />
+      <source-file src="src/android/otpl.java" target-dir="src/in/rtac/otpl" />
+      <source-file src="libs/classes-2.1.13.jar" target-dir="libs"/>
+   </platform>
+</plugin>

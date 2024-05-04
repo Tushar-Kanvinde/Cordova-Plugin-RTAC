@@ -1,0 +1,31 @@
+{
+  "name": "cordova-plugin-rtac",
+  "version": "0.0.1-dev",
+  "description": "A cordova plugin for utilities for RTAC for android platform.",
+  "cordova": {
+    "id": "cordova-plugin-rtac",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tushar-Kanvinde/Cordova-Plugin-RTAC.git"
+  },
+  "keywords": [
+    "cordova",
+    "RTAC Utilities"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=11.0.0"
+    }
+  ],
+  "author": "Tushar Kanvinde",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/CesarBalzer/Cordova-Plugin-RTAC/issues"
+  },
+  "homepage": "https://github.com/CesarBalzer/Cordova-Plugin-RTAC#readme"
+}
