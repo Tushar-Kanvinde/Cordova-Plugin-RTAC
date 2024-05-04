@@ -10,8 +10,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import in.rtac.otpl.otpl;
+import android.app.Activity;
+import android.view.WindowManager;
+
+import org.apache.cordova.*;
+import org.json.JSONArray;
+import org.json.JSONException;
 
 public class RTAC  extends CordovaPlugin {
+    private in.rtac.RTAC.RTAC mContext;
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         switch(action){
             case "printBitmap":
@@ -24,9 +31,49 @@ public class RTAC  extends CordovaPlugin {
             case "checkOTPLPrinterPaper":
                 checkOTPLPrinterPaper(callbackContext);
                 return true;
+            case "enableScreenshot":
+                enableScreenshot(callbackContext);
+                return true;
+            case "disableScreenshot":
+                disableScreenshot(callbackContext);
+                return true;
             default:
                 return false;
         }
+    }
+    void enableScreenshot(CallbackContext callbackContext){
+        mContext=this;
+        this.cordova.getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+                try{
+                    // Allow to make screenshots removing the FLAG_SECURE
+                    if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+                        mContext.cordova.getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_SECURE);
+                    }
+                    callbackContext.success("Success");
+                }catch(Exception e){
+                    callbackContext.error(e.toString());
+                }
+            }
+        });
+    }
+    void disableScreenshot(CallbackContext callbackContext){
+        mContext=this;
+        this.cordova.getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+                try{
+                    // Allow to make screenshots removing the FLAG_SECURE
+                    // Disable the creation of screenshots adding the FLAG_SECURE to the window
+                    if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+                        mContext.cordova.getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
+                                WindowManager.LayoutParams.FLAG_SECURE);
+                    }
+                    callbackContext.success("Success");
+                }catch(Exception e){
+                    callbackContext.error(e.toString());
+                }
+            }
+        });
     }
     void openNavigation(CallbackContext callbackContext, Float latitude, Float longitude) {
 
