@@ -26,7 +26,7 @@ public class RTAC  extends CordovaPlugin {
                 printOTPLBitmap(callbackContext, imageString);
                 return true;
             case  "openNavigation":
-                openNavigation(callbackContext, (float) args.getDouble(0), (float) args.getDouble(1));
+                openNavigation(callbackContext, args.getDouble(0), args.getDouble(1));
                 return true;
             case "checkOTPLPrinterPaper":
                 checkOTPLPrinterPaper(callbackContext);
@@ -75,7 +75,7 @@ public class RTAC  extends CordovaPlugin {
             }
         });
     }
-    void openNavigation(CallbackContext callbackContext, Float latitude, Float longitude) {
+    void openNavigation(CallbackContext callbackContext, Double latitude, Double longitude) {
 
         Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
                 Uri.parse("google.navigation:q=" + latitude + "," + longitude + "&mode=b"));
