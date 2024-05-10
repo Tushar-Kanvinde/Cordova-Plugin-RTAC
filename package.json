@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-rtac",
+  "name": "Cordova-Plugin-RTAC",
   "version": "0.0.1-dev",
   "description": "A cordova plugin for utilities for RTAC for android platform.",
   "cordova": {
-    "id": "cordova-plugin-rtac",
+    "id": "Cordova-Plugin-RTAC",
     "platforms": [
       "android"
     ]
