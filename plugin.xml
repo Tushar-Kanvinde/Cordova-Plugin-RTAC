@@ -26,7 +26,7 @@
    <platform name="android">
       <config-file target="res/xml/config.xml" parent="/*">
          <feature name="RTAC">
-            <param name="android-package" value="in.rtac.RTAC.RTAC"/>
+            <param name="android-package" value="in.rtac.RTACOTPL.RTACOTPL"/>
          </feature>
          <feature name="otpl">
             <param name="android-package" value="in.rtac.otpl.otpl"/>
