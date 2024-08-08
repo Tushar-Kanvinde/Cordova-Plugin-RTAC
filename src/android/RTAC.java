@@ -1,4 +1,4 @@
-package in.rtac.RTAC;
+package in.rtac.RTACOTPL;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -18,7 +18,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 public class RTAC  extends CordovaPlugin {
-    private in.rtac.RTAC.RTAC mContext;
+    private in.rtac.RTACOTPL.RTACOTPL mContext;
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         switch(action){
             case "printBitmap":
